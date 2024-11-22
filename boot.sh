@@ -9,7 +9,7 @@ ascii_art='________                  __        ___.
 '
 
 echo -e "$ascii_art"
-echo "=> Makub is for fresh macOS installations only!"
+echo "=> Omacub is for fresh macOS installations only!"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 # Install brew
@@ -18,12 +18,12 @@ echo -e "\nBegin installation (or abort with ctrl+c)..."
 brew update >/dev/null
 brew install git >/dev/null
 
-echo "Cloning Makub..."
+echo "Cloning Omacub..."
 rm -rf ~/.local/share/omacub
 git clone https://github.com/Blinkuu/omacub.git ~/.local/share/omacub >/dev/null
-if [[ $MAKUB_REF != "master" ]]; then
+if [[ $OMACUB_REF != "master" ]]; then
     cd ~/.local/share/omacub
-    git fetch origin "${MAKUB_REF:-stable}" && git checkout "${MAKUB_REF:-stable}"
+    git fetch origin "${OMACUB_REF:-stable}" && git checkout "${OMACUB_REF:-stable}"
     cd -
 fi
 

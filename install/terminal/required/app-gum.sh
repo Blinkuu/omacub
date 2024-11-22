@@ -1,2 +1,2 @@
-# Gum is used for the Makub commands for tailoring Makub after the initial install
+# Gum is used for the Omacub commands for tailoring Omacub after the initial install
 brew install gum
