@@ -5,8 +5,7 @@ HISTSIZE=32768
 HISTFILESIZE="${HISTSIZE}"
 
 # Autocompletion
-# TODO(lukasz): Fix autocompletion
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Set complete path
 export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omacub/bin:$PATH"
