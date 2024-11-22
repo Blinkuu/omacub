@@ -1,0 +1,33 @@
+# File system
+alias ls='eza -lh --group-directories-first --icons'
+alias lsa='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
+alias cd='z'
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cdd='cd ~/Dev'
+alias cdg='cd ~/Dev/git'
+
+# Tools
+alias n='nvim'
+alias g='git'
+alias d='docker'
+alias r='rails'
+alias bat='batcat'
+alias lzg='lazygit'
+alias lzd='lazydocker'
+alias activity='alacritty --config-file ~/.local/share/omacub/defaults/alacritty/btop.toml --class=Activity --title=Activity -e btop'
+
+# Git
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gcad='git commit -a --amend'
+
+# Compression
+compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
+alias decompress="tar -xzf"

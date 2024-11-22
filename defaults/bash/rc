@@ -1,0 +1,4 @@
+source ~/.local/share/omacub/defaults/bash/shell
+source ~/.local/share/omacub/defaults/bash/aliases
+source ~/.local/share/omacub/defaults/bash/prompt
+source ~/.local/share/omacub/defaults/bash/init

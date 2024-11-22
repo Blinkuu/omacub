@@ -1,0 +1,7 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+source ~/.local/share/omacub/defaults/bash/rc
+
+# Editor used by CLI
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source $OMACUB_PATH/ascii.sh
+echo "" # Add spacing
+echo "                                 $(cat $OMACUB_PATH/version)"
+echo "" # Add spacing
+source $OMACUB_PATH/bin/omacub-sub/menu.sh

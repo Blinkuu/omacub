@@ -1,0 +1,15 @@
+# History control
+setopt APPEND_HISTORY
+HISTCONTROL=ignoreboth
+HISTSIZE=32768
+HISTFILESIZE="${HISTSIZE}"
+
+# Autocompletion
+# TODO(lukasz): Fix autocompletion
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+# Set complete path
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omacub/bin:$PATH"
+set +h
+
+export OMACUB_PATH="$HOME/.local/share/omacub"

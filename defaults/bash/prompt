@@ -1,0 +1,3 @@
+# Technicolor dreams
+
+eval "$(starship init zsh)"
