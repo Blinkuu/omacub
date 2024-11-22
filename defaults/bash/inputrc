@@ -12,6 +12,7 @@ set show-all-if-unmodified on
 "\e[B": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char
+# TODO: Fix moving word by word
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
