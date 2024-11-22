@@ -15,6 +15,7 @@ alias cdg='cd ~/Dev/git'
 
 # Tools
 alias n='nvim'
+alias nvimdiff='nvim -d'
 alias g='git'
 alias d='docker'
 alias r='rails'
