@@ -1,42 +1,41 @@
-set meta-flag on
-set input-meta on
-set output-meta on
-set convert-meta off
-set completion-ignore-case on
-set completion-prefix-display-length 2
-set show-all-if-ambiguous on
-set show-all-if-unmodified on
+# Enable extended globbing and other enhancements
+setopt EXTENDED_GLOB
+setopt NO_CASE_GLOB       # Case-insensitive globbing
+setopt LIST_TYPES         # Show file type indicators like ls -F
 
-# Arrow keys match what you've typed so far against your command history
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-"\e[C": forward-char
-"\e[D": backward-char
-# TODO: Fix moving word by word
+# Ignore case during completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}'
 
-# Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
+# Control completion behavior
+setopt AUTO_LIST          # Automatically list choices on ambiguous completion
+zstyle ':completion:*' menu select    # Use a menu for completion selections
 
-# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
-set match-hidden-files off
+# Set the threshold for listing completions without confirmation
+zstyle ':completion:*' list-max 200
 
-# Show all autocomplete results at once
-set page-completions off
+# Disable paging of completion listings
+zstyle ':completion:*' use-pager no
 
-# If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
+# Show extra file information when completing
+setopt LIST_TYPES
 
-# Show extra file information when completing, like `ls -F` does
-set visible-stats on
+# Append a trailing slash when autocompleting symlinked directories
+zstyle ':completion:*' mark-symlinked-directories yes
 
-$if Bash
-  # Be more intelligent when autocompleting by also looking at the text after
-  # the cursor. For example, when the current line is "cd ~/src/mozil", and
-  # the cursor is on the "z", pressing Tab will not autocomplete it to "cd
-  # ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
-  # Readline used by Bash 4.)
-  set skip-completed-text on
+# Do not autocomplete hidden files unless pattern starts with a dot
+zstyle ':completion:*' ignore-hidden yes
 
-  # Coloring for Bash 4 tab completions.
-  set colored-stats on
-$endif
+# Key bindings for moving word by word (Ctrl+Left/Right)
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# Enable colored completion listings
+# zmodload zsh/complist
+# autoload -Uz colors && colors
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Be more intelligent with autocompletion (skip completed text)
+setopt COMPLETE_IN_WORD
+
+# Ensure proper encoding (UTF-8) support
+export LANG=en_US.UTF-8

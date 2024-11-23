@@ -2,5 +2,4 @@ source ~/.local/share/omacub/defaults/zsh/shell
 source ~/.local/share/omacub/defaults/zsh/aliases
 source ~/.local/share/omacub/defaults/zsh/prompt
 source ~/.local/share/omacub/defaults/zsh/init
-# TODO: Migrate input from inputrc format to zsh
-# source ~/.local/share/omacub/defaults/zsh/input
+source ~/.local/share/omacub/defaults/zsh/input
