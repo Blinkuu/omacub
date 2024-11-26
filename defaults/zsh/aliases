@@ -22,6 +22,7 @@ alias r='rails'
 alias bat='batcat'
 alias lzg='lazygit'
 alias lzd='lazydocker'
+alias python='python3'
 alias activity='alacritty --config-file ~/.local/share/omacub/defaults/alacritty/btop.toml --class=Activity --title=Activity -e btop'
 
 # Git
