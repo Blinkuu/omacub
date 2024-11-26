@@ -6,6 +6,7 @@ program = "/opt/homebrew/bin/zellij"
 
 [window]
 padding.x = 10
-padding.y = 10 
+padding.y = 10
 decorations = "None"
 opacity = 0.98
+option_as_alt = "Both"
