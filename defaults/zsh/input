@@ -29,9 +29,11 @@ zstyle ':completion:*' ignore-hidden yes
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Make moving word by word behave like in bash
+autoload -U select-word-style
+select-word-style bash
+
 # Enable colored completion listings
-# zmodload zsh/complist
-# autoload -Uz colors && colors
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Be more intelligent with autocompletion (skip completed text)
