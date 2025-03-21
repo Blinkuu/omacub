@@ -14,3 +14,22 @@ export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omacub/bin:$PATH"
 set +h
 
 export OMACUB_PATH="$HOME/.local/share/omacub"
+
+# Automatically name Zellij tabs
+if command -v zellij &> /dev/null; then
+  zellij_tab_name_update() {
+      if [[ -n $ZELLIJ ]]; then
+          local current_dir=$PWD
+          if [[ $current_dir == $HOME ]]; then
+              current_dir="~"
+          else
+              current_dir=${current_dir##*/}
+          fi
+          command nohup zellij action rename-tab $current_dir >/dev/null 2>&1
+      fi
+  }
+
+  zellij_tab_name_update
+  chpwd_functions+=(${chpwd_functions[@]} "zellij_tab_name_update")
+fi
+
